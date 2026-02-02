@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "IDN Homograph Attack Blocker",
+  "description": "Blocks malicious IDN homograph phishing websites.",
+  "version": "1.1",
+
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
